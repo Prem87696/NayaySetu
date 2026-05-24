@@ -25,7 +25,7 @@ export default function Header({ currentPage, userSession, walletBalance, naviga
   };
 
   return (
-    <header className="w-full relative z-50">
+    <header className="w-full sticky top-0 z-50">
       {/* Top Offer Strip */}
       <div className="w-full bg-[#042F2D] text-[#D8E7E3] py-2.5 px-4 text-xs font-sans flex items-center justify-between border-b border-[#0F8A6A]/15 shadow-sm">
         <div className="max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-2">
