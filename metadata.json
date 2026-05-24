@@ -1,0 +1,6 @@
+{
+  "name": "NyaySetu",
+  "description": "Online legal services - Solution Without Litigation. Pay-per-minute expert legal advice from verified attorneys.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-dark: #063F3B;
+  --bg-deep: #042F2D;
+  --bg-soft: #0A4B45;
+
+  --primary: #0F8A6A;
+  --primary-dark: #075E53;
+  --primary-light: #18A982;
+
+  --gold: #D6A93A;
+  --gold-dark: #B88922;
+  --gold-soft: rgba(214, 169, 58, 0.16);
+
+  --white: #FFFFFF;
+  --text-main: #FFFFFF;
+  --text-soft: #D8E7E3;
+  --text-muted: #AFC7C2;
+
+  --card-bg: #FFFFFF;
+  --card-text: #073B36;
+
+  --danger: #B00020;
+  --danger-bg: #FDE7E9;
+
+  --border-light: rgba(255,255,255,0.14);
+  --border-gold: rgba(214,169,58,0.45);
+
+  --shadow-soft: 0 18px 45px rgba(0,0,0,0.22);
+  --shadow-card: 0 18px 50px rgba(0,0,0,0.28);
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-primary: #063F3B;
+  --color-secondary: #D6A93A;
+  --color-accent: #0F8A6A;
+  --color-legal-bg: #042F2D;
+  --color-legal-surface: #0A4B45;
+  --color-dark-text: #17211F;
+  --color-muted-text: #64706C;
+  --color-legal-border: rgba(255,255,255,0.12);
+  --color-legal-green: #18A982;
+  --color-legal-gold: #D6A93A;
+
+  --shadow-premium: 0 10px 24px rgba(0,0,0,0.15);
+  --shadow-premium-hover: 0 14px 32px rgba(0,0,0,0.22);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-legal-bg);
+    color: #E2EAE7;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .serif-heading {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom styles for layout, scrollbar, or custom animations */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Premium Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Premium Glowing Aura Overlay (100% GPU-Safe) */
+.ambient-glow {
+  background: radial-gradient(circle, rgba(214, 169, 58, 0.08) 0%, rgba(214, 169, 58, 0) 70%);
+}
+
+/* Safe card shadow hover transitions */
+.hover-premium-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+.hover-premium-card:hover {
+  transform: translate3d(0, -4px, 0);
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-secondary);
+}
